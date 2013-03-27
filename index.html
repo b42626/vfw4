@@ -1,0 +1,587 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Vfw4</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Vfw4</h1>
+    </header>
+    <div id="container">
+      <p class="tagline"></p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/b42626/vfw4/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/b42626/vfw4/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/b42626/vfw4" class="code">View Vfw4 on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <p>
+    </p>
+        Load outs for a shooter<pre><code>&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;&lt;h1&gt;Load out screen&lt;/h2&gt;&lt;/header&gt;
+        &lt;article&gt;
+            &lt;p&gt;Manage your load outs.&lt;/p&gt;
+        &lt;/article&gt;
+            &lt;section&gt;
+            &lt;nav&gt;
+                &lt;ul id="numlist"&gt;
+                    &lt;li&gt;&lt;a href="additem.html"&gt;Add Load out&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;View All Load outs&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href = "additem.html" id="clear" style="display:none;"&gt; Clear Stored load outs&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+            &lt;/section&gt;
+        &lt;footer&gt;&lt;/footer&gt;
+        &lt;script type="text/javascript" src="js/JSON.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript" src="js/main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p></p>
+
+<p>
+    </p>
+        Load outs for a shooter<h1>My Load outs</h1>
+         <a href="#">Delete Load outs</a>
+            <a href="#">Show Load outs</a>
+            <a href="additem.html">Add Load out</a>
+         
+
+<pre><code>        &lt;fieldset&gt;
+            &lt;legend&gt;Load out Info&lt;/legend&gt;
+            &lt;span&gt; * Required Fields&lt;/span&gt;
+            &lt;ul id="errors"&gt;&lt;/ul&gt;
+            &lt;ul id="fields"&gt;
+                &lt;li&gt;
+                    &lt;label for="lon"&gt;*Load out Name:&lt;/label&gt;&lt;input type="text" id="lon"/&gt;
+                &lt;/li&gt;
+                &lt;li id="select"&gt;&lt;label for="weapon"&gt;*Weapon Selection:&lt;/label&gt;&lt;br /&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;!--*--&gt;Class Selection:
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;input type="radio" value="Sniper" id="Sniper"  name="sclass" /&gt;&lt;label for="Sniper"&gt;Sniper&lt;/label&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;input type="radio" value="Assualt" id="Assault"  name="sclass" /&gt;&lt;label for="Assault"&gt;Assault&lt;/label&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;input type="radio" value="Support" id="Support"  name="sclass" /&gt;&lt;label for="Support"&gt;Support&lt;/label&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;Often used&lt;/li&gt;
+                &lt;li&gt;&lt;input type="checkbox" id="fav" value="Yes" class = "checkbox" /&gt;&lt;label for="fav"&gt;Yes&lt;/label&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;input type="checkbox" id="fav" value="No" class = "checkbox" /&gt;&lt;label for="fav"&gt;No&lt;/label&gt;&lt;/li&gt;
+                &lt;li&gt;
+
+                    &lt;label for="rate"&gt;Rating&lt;/label&gt;
+                    &lt;input type="range" min="0" max="10" id="rate" type="range"&gt;
+                     &lt;script type="text/javascript"&gt;
+                        function showNumber(newNumber){
+                            document.getElementById("weapon").innerHTML = newNumber;
+                        }
+                &lt;/script&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;span&gt;&lt;label for="comments"&gt;comments:&lt;/label&gt;&lt;/span&gt;&lt;textarea id="comments"&gt;&lt;/textarea&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;label for="date"&gt;*Date Created:&lt;/label&gt;&lt;input type="date" min="#" max="#" id="date" name="date"&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/fieldset&gt;
+        &lt;input type = "submit" value = "Save Load out" id = "saveData"/&gt;
+
+    &lt;/form&gt;
+&lt;script type="text/javascript" src="js/JSON.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p></p>
+
+<p>article, aside, figure, footer, header, hgroup, nav, section {
+    display:block;
+}</p>
+
+<p>body { 
+    font-family: Verdana, Arial, Apple Chancery, Baskerville;
+    width: 400px;
+    margin: auto;
+    padding: 12px;
+    overflow: scroll;
+} </p>
+
+<p>section { 
+    display: block;
+} </p>
+
+<p>header { 
+    display: block;
+} </p>
+
+<p>nav { 
+    display: block;
+} </p>
+
+<p>footer { 
+    display: block;
+} </p>
+
+<p>article { </p>
+
+<p>} </p>
+
+<p>div#items {
+    font-family: Baskerville;
+    width: auto;
+    margin: auto;
+    padding: 12px;
+    outline: dashed;
+    color: blue;
+    font-weight: normal;
+    line-height: 1.0em;
+}</p>
+
+<p>a { 
+    font-family: Apple Chancery;
+    outline: none;
+    text-decoration: none;
+    color: black;
+} </p>
+
+<p>a:hover {
+    outline: 1px dotted blue;
+    text-decoration: underline;
+}</p>
+
+<p>h1 { </p>
+
+<pre><code>font-family: Arial;
+font-size: 36px;
+margin: 0px;
+padding: 5px;
+border: 14px black;
+background: grey;
+outline: solid;
+width: 95%;
+display: ;
+overflow: ;
+visibility: ;
+word-wrap: ;
+text-align: center;
+text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+</code></pre>
+
+<p>} </p>
+
+<p>h2 { </p>
+
+<p>} </p>
+
+<p>legend { 
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+} </p>
+
+<p>fieldset { 
+    display: block;
+    text-decoration: none;
+    border: 3px single;
+    color: #000000;
+    background-color: rgba(23,150,230,2);
+    text-align: left;
+    font-size: 14px;
+    margin: 5px 5px 5px 5px;
+    padding: 15px 0;
+    position: relative;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    -webkit-box-shadow: 2px 2px 0 0 rgba(124,88,196,2);
+    -moz-box-shadow: 2px 2px 0 0 rgba(124,88,196,2);
+    box-shadow: 2px 2px 0 0 rgba(124,88,196,2);
+} </p>
+
+<p>label { 
+    display: inline;</p>
+
+<p>} </p>
+
+<p>input[type=submit] { 
+    color: #5402F7;
+    background-color: gray;
+    -moz-border-radius: 45%;
+    border-radius: 15%;
+} </p>
+
+<p>ul { 
+} </p>
+
+<h1>numlist {</h1>
+
+<p>} </p>
+
+<p>li { 
+    display: block;
+} </p>
+
+<p>var json = {
+    "weapon1": {
+        "loadoutName": ["Load out Name:", "assaulter"],
+        "weaponCategory": ["Weapon Category:", "AK47"],
+        "sclass": ["class selection:", "Assault"],
+        "favorite": ["often used:", "Yes"],
+        "rate": ["rating:", "6"],
+        "comments": ["comments:", "used on bay."],
+        "date": ["date created:", "12/12/12"]
+     },
+       "weapon2": {
+        "loadoutName": ["Load out Name:", "sniper"],
+        "weaponCategory": ["Weapon Category:", "Dragonov"],
+        "sclass": ["class selection:", "Sniper"],
+        "favorite": ["often used:", "no"],
+        "rate": ["rating:", "3"],
+        "comments": ["comments:", "used on ridge."],
+        "date": ["date created:", "1/12/13"]
+    },
+        "weapon3": {
+        "loadoutName": ["Load out Name:", "suppressive fire"],
+        "weaponCategory": ["Weapon Category:", "HAMR"],
+        "sclass": ["class selection:", "Support"],
+        "favorite": ["often used:", "yes"],
+        "rate": ["rating:", "7"],
+        "comments": ["comments:", "used on tower."],
+        "date": ["date created:", "2/12/13"]
+    },
+    "weapon4": {
+        "loadoutName": ["Load out Name:", "commando"],
+        "weaponCategory": ["Weapon Category:", "M4a1"],
+        "sclass": ["class selection:", "Assault"],
+        "favorite": ["often used:", "yes"],
+        "rate": ["rating:", "9"],
+        "comments": ["comments:", "used on tower."],
+        "date": ["date created:", "2/15/13"]
+    }    </p>
+
+<p>}</p>
+
+<p>window.addEventListener("DOMContentLoaded", function doItAll(){</p>
+
+<pre><code>function $(e){
+    var elementID = document.getElementById(e);
+    return elementID;
+}
+
+function makeSelect(){
+    var formTag = document.getElementsByTagName("form"),
+        selectLi = $("select"),
+        makeSelect = document.createElement("select");
+    makeSelect.setAttribute("id", "weapons");
+    for(var i = 0, j = weaponType.length; i &lt; j; i++){
+        var makeOption = document.createElement("option");
+        var optText = weaponType[i];
+        makeOption.setAttribute("value", optText);
+        makeOption.innerHTML = optText;
+        makeSelect.appendChild(makeOption);
+    }
+    selectLi.appendChild(makeSelect);
+}
+
+function getRadio(){
+    var radios = document.forms[0].sclass;
+    for(var i = 0; i &lt; radios.length; i++){
+        if (radios[i].checked){
+            sclassValue = radios[i].value;
+        }
+    }
+}
+
+function getCheckbox(){
+    if($('fav').checked){
+        favoriteValue = $('fav').value;
+    } else {
+        favoriteValue = "No"
+    }
+}
+
+
+function toggleControls(n){
+    switch(n){
+        case "on":
+            $("weaponForm").style.display = "none";
+            $('clearData').style.display = "inline";
+            $("displayData").style.display = "none";
+            $("addNew").style.display = "inline";
+            break;
+        case "off":
+            $("weaponForm").style.display = "block";
+            $('clearData').style.display = "inline";
+            $("displayData").style.display = "inline";
+            $("addNew").style.display = "none";
+            $("items").style.display = "none";
+            break;
+        default:
+            return false;
+    }
+}
+
+function validate(e){
+    var getLoadoutName = $("lon");
+    var getWeaponCategory = $("weapons");
+    var getDate = $("date");
+
+    errMsg.innerHTML = "";
+    getLoadoutName.style.border = "1px solid black";
+    getWeaponCategory.style.border = "1px solid black";
+    getDate.style.border = "1px solid black";
+
+    var messageArray = [];
+
+
+    if(getLoadoutName.value === ""){
+        var loadoutNameError = "Please enter a name for the load out.";
+        getLoadoutName.style.border = "2px solid red";
+        messageArray.push(loadoutNameError);
+    }
+
+    if(getWeaponCategory.value === "--Weapon Category--"){
+        var weaponCategoryError = "Please select a weapon.";
+        getWeaponCategory.style.border = "2px solid red";
+        messageArray.push(weaponCategoryError);
+    }
+
+
+    if(getDate.value === ""){
+        var dateError = "Please enter a date.";
+        getDate.style.border = "1px solid red";
+        messageArray.push(dateError);
+    }
+
+    if(messageArray.length &gt;= 1){
+        for(var i = 0, j = messageArray.length; i &lt; j; i++){
+            var text = document.createElement("li");
+            text.innerHTML = messageArray[i];
+            errMsg.appendChild(text);
+        }
+        e.preventDefault();
+        return false;
+    } else {
+        storeData(this.key);
+    }
+}
+
+function storeData(key){
+    if(!key){
+        var id = Math.floor(Math.random()*100000001);
+    } else {
+        id = key;
+    }
+    getRadio();
+    getCheckbox();
+    var item = {};
+
+    item.loadoutName = ["Load out Name:", $("lon").value];
+    item.weaponCategory = ["Weapon Category:", $("weapons").value];
+    item.sclass = ["Class Selection:", sclassValue];
+    item.favorite = ["Often used:", favoriteValue];
+    item.rate = ["rating:", $("rate").value];
+    item.comments = ["Comments:", $("comments").value];
+    item.date = ["Date created:", $("date").value];
+    localStorage.setItem(id, JSON.stringify(item));
+    alert("Load out saved!");
+}
+
+function autoFillData(){
+    for(var n in json){
+        var id = Math.floor(Math.random()*100000001);
+        localStorage.setItem(id, JSON.stringify(json[n]));
+    }
+}
+
+function getData(){
+    toggleControls("on");
+    if(localStorage.length === 0){
+        var ask = confirm("There are no load outs. would you like to auto create them?");
+        if(ask){
+            autoFillData();
+        } else {
+            window.location.reload();
+        }
+    }
+    var makeDiv = document.createElement("div");
+    makeDiv.setAttribute("id", "items");
+    var makeList = document.createElement("ul");
+    makeDiv.appendChild(makeList);
+    document.body.appendChild(makeDiv);
+    $("items").style.display = "block";
+    for(var i = 0, len=localStorage.length; i &lt; len; i++){
+        var makeli = document.createElement("li");
+        var linksLi = document.createElement("li");
+        makeList.appendChild(makeli);
+        var key = localStorage.key(i);
+        var value = localStorage.getItem(key);
+        var obj = JSON.parse(value);
+        var makeSubList = document.createElement("ul");
+        makeli.appendChild(makeSubList);
+        getImage(obj.weaponCategory[1], makeSubList);
+        for(var n in obj){
+            var makeSubli = document.createElement("li");
+            makeSubList.appendChild(makeSubli);
+            var optSubText = obj[n][0] + " " + obj[n][1];
+            makeSubli.innerHTML = optSubText;
+            makeSubList.appendChild(linksLi);
+        }
+        makeItemLinks(localStorage.key(i), linksLi)
+    }
+}
+
+function getImage(catName, makeSubList){
+    var imageLi = document.createElement("li");
+    makeSubList.appendChild(imageLi);
+    var newImage = document.createElement("img");
+    var setSrc = newImage.setAttribute("src", "images/" + catName + ".svg");
+    imageLi.appendChild(newImage);
+
+}
+
+function makeItemLinks(key, linksLi){
+    var editLink = document.createElement("a");
+    editLink.href = "#";
+    editLink.key = key;
+    var editText = "Edit Load out";
+    editLink.addEventListener("click", editItem);
+    editLink.innerHTML = editText;
+    linksLi.appendChild(editLink);
+
+    var breakTag = document.createElement('br');
+    linksLi.appendChild(breakTag);
+
+    var deleteLink = document.createElement("a");
+    deleteLink.href = "#";
+    deleteLink.key = key;
+    var deleteText = "Delete Load out";
+    deleteLink.addEventListener("click", deleteItem);
+    deleteLink.innerHTML = deleteText;
+    linksLi.appendChild(deleteLink);
+}
+
+function editItem(){
+    var value = localStorage.getItem(this.key);
+    var item = JSON.parse(value);
+
+    toggleControls("off");
+
+    $("lon").value = item.loadoutName[1];
+    $("weapons").value = item.weaponCategory[1];
+    var radios = document.forms[0].sclass;
+    for(var i = 0; i &lt; radios.length; i++){
+        if(radios[i].value == "Sniper" &amp;&amp; item.sclass[1] == "Sniper"){
+            radios[i].setAttribute("checked", "checked");
+        } else if(radios[i].value == "Assaulter" &amp;&amp; item.sclass[1] == "Assault"){
+            radios[i].setAttribute("checked", "checked");
+        } else if(radios[i].value == "Support" &amp;&amp; item.sclass[1] == "Support"){
+            radios[i].setAttribute("checked", "checked");
+        }
+    }
+    if(item.favorite[1] == "Yes"){
+        $('fav').setAttribute("checked", "checked");
+    }
+    $("rate").value = item.rate[1];
+    $("comments").value = item.comments[1];
+    $("date").value = item.date[1];
+
+    saveData.removeEventListener("click", storeData);
+
+    $("saveData").value = "Edit Load out";
+    var editSubmit = $("saveData");
+
+    editSubmit.addEventListener("click", validate);
+    editSubmit.key = this.key;
+}
+
+function deleteItem(){
+    var ask = confirm("Are you sure you want to delete this load out?");
+    if(ask){
+        localStorage.removeItem(this.key);
+        alert("Load out deleted.");
+        window.location.reload();
+    } else {
+        alert("Load out was not deleted.");
+    }
+}
+
+function eraseData(){
+    if(localStorage.length === 0){
+        alert("There are no created Load outs.");
+    } else {
+        var ask = confirm("Are you sure you want to delete all Load outs?")
+        if(ask){
+            localStorage.clear();
+            alert("Load outs deleted.");
+            window.location.reload();
+            return false;
+        } else {
+            alert("Load outs were not deleted.");
+            window.location.reload();
+        }
+    }
+}
+
+  var weaponType = ["--Weapon Category--", "--Assault rifles--", "Scar H", "AK47", "Aug A3", "M4a1", "--Sniper rifles--", "Dragonov", "Ballista", "Barrett M90", "--LMGs--", "LSAT", "HMAR","RPK"],
+   sclassValue,
+    favoriteValue = "No",
+    errMsg = $("errors");
+
+makeSelect();
+
+var saveData = $("saveData");
+saveData.addEventListener("click", validate);
+var displayData = $("displayData");
+displayData.addEventListener("click", getData);
+var clearData = $("clearData");
+clearData.addEventListener("click", eraseData);
+</code></pre>
+
+<p>});</p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/b42626" class="avatar"><img src="https://secure.gravatar.com/avatar/e3b89d7abb8744b112d2701a1e58614c?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/b42626">b42626</a> maintains <a href="https://github.com/b42626/vfw4">Vfw4</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/b42626/vfw4/tarball/master" class="tar">tar</a><a href="https://github.com/b42626/vfw4/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
