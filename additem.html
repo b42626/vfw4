@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+     <!--
+    web app part 4
+  	Matt Nowakowski
+  	Visual frameworks
+    1303
+   -->
+
+
+<html>
+	<head>
+		<title>Load outs for a shooter</title>
+		<meta type="charset" content = "utf-8" />
+		<meta type="robots" content="index,follow" />
+		<meta type="viewport" content="user-scalable=yes, width=device-width" />
+		<meta type="description" content="Manage your load outs" />
+		<meta type="keywords" content = "load outs, add load outs, vfw, Matt Nowakowski" />
+		<link rel="stylesheet" href="css/styles.css" type="text/css" />
+    </head>
+    <body>
+        <h1>My Load outs</h1>
+        <nav>
+            <a href = "#" id = "clearData">Delete Load outs</a>
+            <a href = "#" id = "displayData">Show Load outs</a>
+            <a href = "additem.html" id = "addNew" style = "display: none;" >Add Load out</a>
+        </nav>
+        <form action="#" method="post" id = "weaponForm">
+        
+            <fieldset>
+                <legend>Load out Info</legend>
+                <span> * Required Fields</span>
+                <ul id="errors"></ul>
+                <ul id="fields">
+                    <li>
+                        <label for="lon">*Load out Name:</label><input type="text" id="lon"/>
+                    </li>
+                    <li id="select"><label for="weapon">*Weapon Selection:</label><br /></li>
+                    <li><!--*-->Class Selection:
+                        <ul>
+                            <li><input type="radio" value="Sniper" id="Sniper"  name="sclass" /><label for="Sniper">Sniper</label></li>
+                            <li><input type="radio" value="Assualt" id="Assault"  name="sclass" /><label for="Assault">Assault</label></li>
+                            <li><input type="radio" value="Support" id="Support"  name="sclass" /><label for="Support">Support</label></li>
+                        </ul>
+                    </li>
+                    <li>Often used</li>
+                    <li><input type="checkbox" id="fav" value="Yes" class = "checkbox" /><label for="fav">Yes</label></li>
+                    <li><input type="checkbox" id="fav" value="No" class = "checkbox" /><label for="fav">No</label></li>
+                    <li>
+                    
+                        <label for="rate">Rating</label>
+                        <input type="range" min="0" max="10" id="rate" type="range">
+                         <script type="text/javascript">
+                            function showNumber(newNumber){
+                                document.getElementById("weapon").innerHTML = newNumber;
+                            }
+                    </script>
+                    </li>
+                    <li>
+                        <span><label for="comments">comments:</label></span><textarea id="comments"></textarea>
+                    </li>
+                    <li>
+                        <label for="date">*Date Created:</label><input type="date" min="#" max="#" id="date" name="date">
+                    </li>
+                </ul>
+            </fieldset>
+            <input type = "submit" value = "Save Load out" id = "saveData"/>
+
+        </form>
+	<script type="text/javascript" src="js/JSON.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
